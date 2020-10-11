@@ -18,4 +18,6 @@ Route::get('/', function () {
 //admin.home.createのアクセスが来たら、HomeControllerのadd関数に渡す
 Route::group(['prefix' => 'member'], function() {
     Route::get('home/home', 'Member\HomeController@add');
+    Route::get('article/home', 'Member\HomeController@article');
+    Route::get('request/home', 'Member\HomeController@request');
 });
