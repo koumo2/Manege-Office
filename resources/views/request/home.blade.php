@@ -5,7 +5,6 @@
 @section('content')
  <h1>書類申請ホーム画面</h1>
 
-
 <!-- 新規ボタン-->
 <div style="display:inline-block;padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
 新規申請
