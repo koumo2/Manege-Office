@@ -1,15 +1,12 @@
 <!-- メニューバーを継承-->
 @extends('layouts.menuber')
 
-@section('title', "回覧板")
+@section('title', "書類申請＿ホーム")
 @section('content')
- <h1>回覧板ホーム画面</h1>
-
+ <h1>書類申請ホーム画面</h1>
 
 <!-- 新規ボタン-->
-<div style="display:inline-block;padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
-新規作成
-</div>
+<a href = create><input type="submit" value="新規申請"></a>
 
 <!-- 検索ボタン-->
 <form method="get" action="#" class="search_container">
@@ -21,21 +18,24 @@
 <table border="3">
   <tr>
     <th>No</th>
+    <th>分類</th>
     <th>タイトル</th>
-    <th>添付有無</th>
     <th>作成日</th>
     <th>作成者</th>
+    <th>申請状況</th>
 
   </tr>
   <tr>
     <td>1</td>
-    <td>ポートフォリオの作成について</td>
-    <td>無</td>
+    <td>仕様書</td>
+    <td>ABCの仕様書について</td>
     <td>2020年10月11日</td>
     <td>甲元和馬</td>
+    <td>上下社長</td>
   </tr>
   <tr>
     <td>2</td>
+    <td>サンプル</td>
     <td>サンプル</td>
     <td>サンプル</td>
     <td>サンプル</td>
@@ -47,9 +47,11 @@
     <td>サンプル</td>
     <td>サンプル</td>
     <td>サンプル</td>
+    <td>サンプル</td>
  </tr>
   <tr>
     <td>4</td>
+    <td>サンプル</td>
     <td>サンプル</td>
     <td>サンプル</td>
     <td>サンプル</td>
@@ -61,9 +63,11 @@
     <td>サンプル</td>
     <td>サンプル</td>
     <td>サンプル</td>
+    <td>サンプル</td>
   </tr>
   <tr>
     <td>6</td>
+    <td>サンプル</td>
     <td>サンプル</td>
     <td>サンプル</td>
     <td>サンプル</td>
