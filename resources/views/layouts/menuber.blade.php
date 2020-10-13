@@ -18,6 +18,7 @@
             margin: 1em 1%;
             overflow: hidden;
             width: 100%;
+            margin-bottom: 50px;
         }
         .cp_navi ul {
             margin: 0;
@@ -49,7 +50,7 @@
             text-decoration: none;
         }
         .cp_navi > ul > li:hover {
-            background-color: rgb(218, 60, 65);
+            background-color: rgb(80, 180, 255);
         }
         .cp_navi > ul > li:hover > a {
             color: rgb( 255, 255, 255 );
@@ -58,7 +59,7 @@
             border-top-color: rgb( 255, 255, 255 );
         }
         .cp_navi > ul > li > div {
-            background-color: rgb(218, 60, 65);
+            background-color: rgb(80, 180, 255);
             border-top: 0;
             border-radius: 0 0 4px 4px;
             box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
@@ -87,6 +88,22 @@
         }
         .cp_navi > ul > li > div ul > li:hover > a {
             background-color: rgba( 255, 255, 255, 0.1);
+        }
+        h2 {
+            border-bottom: solid 3px #cce4ff;
+            position: relative;
+        }
+
+        h2:after {
+            position: absolute;
+            content: " ";
+            display: block;
+            border-bottom: solid 3px #5472cd;
+            bottom: -3px;
+            width: 20%;
+        }
+        main {
+            margin:0 auto;
         }
         </style>
     </head>
