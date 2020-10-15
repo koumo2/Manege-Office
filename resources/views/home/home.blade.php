@@ -10,24 +10,19 @@
     <table class="table table-bordered">
       <thead class="thead-light">
         <tr>
-          <th>11月1日(日)</th>
-          <th>11月2日(月)</th>
-          <th>11月3日(火)</th>
-          <th>11月4日(水)</th>
-          <th>11月5日(木)</th>
-          <th>11月6日(金)</th>
-          <th>11月7日(土)</th>
+        @foreach ($dates as $date)
+        <td>{{{ $date }}}</td>
+        @endforeach
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
+        @foreach ($contents as $content)
+        @if($content == "休み")
+        <td><span style="color:#FF0000;">{{{ $content }}}</span></td>
+        @else<td>{{{ $content }}}</td>
+        @endif
+        @endforeach
         </tr>
       </tbody>
   </table>
@@ -105,11 +100,9 @@
         </thead>
         <tbody>
           <tr>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
+          @foreach ($request as $data)
+        <td>{{{ $data }}}</td>
+        @endforeach
           </tr>
           <tr>
             <td>サンプル</td>
@@ -139,7 +132,5 @@
     </div>
 </div>
 </div>
-</div>
-
-    <!-- 書類申請のショートカット　終わり-->
+<!-- 書類申請のショートカット　終わり-->
 @endsection

@@ -18,7 +18,7 @@
             margin: 1em 1%;
             overflow: hidden;
             width: 100%;
-            margin-bottom: 50px;
+            margin: 25px 0px 25px 0px;
         }
         .cp_navi ul {
             margin: 0;

@@ -5,7 +5,6 @@
 @section('content')
  <h1>回覧板ホーム画面</h1>
 
-
 <!-- 新規ボタン-->
 <a href = create><input type="submit" value="新規作成"></a>
 
@@ -30,18 +29,14 @@
     </thead>
     <tbody>
       <tr>
-        <td>1</td>
-        <td>ポートフォリオの作成について</td>
-        <td>無</td>
-        <td>2020年10月11日</td>
-        <td>甲元和馬</td>
+      @foreach ($datas as $data)
+      <td>{{{ $data }}}</td>
+      @endforeach
       </tr>
       <tr>
-      <td>2</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
+      @foreach ($datas as $data)
+      <td>{{{ $data }}}</td>
+      @endforeach
       </tr>
       <tr>
       <td>3</td>
