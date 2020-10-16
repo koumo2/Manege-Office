@@ -8,6 +8,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         <style>
+        .main {
+            border:double;
+            padding:30px;
+            margin:30px;
+        }
+        .return {
+            text-align: right;
+        }
+        .form-horizontal {
+            border:solid;
+            border-color:#031de2;
+        }
         .cp_navi {
             background-color: #ffffff;
             border: 1px solid #dedede;
@@ -108,6 +120,7 @@
         </style>
     </head>
     <body>
+    <div class="col-md-11 mx-auto">
     <div class="cp_navi">
         <ul>
             <li><a href = {{ action('Member\HomeController@add') }}>Home</a></li>
@@ -141,5 +154,6 @@
         </ul>
     </div>
     @yield('content')
+    </div>
     </body>
 </html>

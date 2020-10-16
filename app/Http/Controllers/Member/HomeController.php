@@ -29,18 +29,21 @@ class HomeController extends Controller
       'content6' => '会議',
       'content7' => '休み'
     ];
+    $articles = [
+      'date1' => '1',
+      'date2' => 'ポートフォリオの作成について',
+      'date3' => '無',
+      'date4' => '2020/10/17',
+      'date5' => '甲元和馬'
+    ];
     $request = [
-      'date1' => '11月1日(日)',
-      'date2' => '11月2日(月)',
-      'date3' => '11月3日(火)',
-      'date4' => '11月4日(水)',
-      'date5' => '11月5日(木)'
-  ];
-  return view('home.home',
-            ['dates' => $dates],
-            ['contents' => $contents],
-            ['request' => $request]
-            );
+      'date1' => '1',
+      'date2' => 'ABCの仕様書について',
+      'date3' => '2020/10/17',
+      'date4' => '甲元和馬',
+      'date5' => '○'
+    ];
+    return view('home.home',compact('dates','contents','articles','request'));
   }
   //回覧板画面
   public function article_home()

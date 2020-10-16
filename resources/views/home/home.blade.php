@@ -2,11 +2,10 @@
 
 @section('title', "ホーム画面")
 @section('content')
-  <h1>メインホーム画面</h1>
+
   <h2>・スケジュール</h2>
   <div class = "text-center">
   <div class="container-fluid">
-    <div class = article>
     <table class="table table-bordered">
       <thead class="thead-light">
         <tr>
@@ -28,13 +27,11 @@
   </table>
   </div>
   </div>
-  </div>
 
     <!-- スケジュールのショートカット　始まり-->
 <div class="container-fluid">
 <div class ="row">
     <div class="col-6">
-    <div class = article>
     <h2>・回覧板</h2>
     <div class = "text-center">
     <table class="table table-bordered">
@@ -49,11 +46,9 @@
       </thead>
       <tbody>
         <tr>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
+        @foreach ($articles as $article)
+        <td>{{{ $article }}}</td>
+        @endforeach
         </tr>
         <tr>
           <td>サンプル</td>
@@ -79,13 +74,11 @@
       </tbody>
     </table>
     </div>
-    </div>
 </div>
     <!-- スケジュールのショートカット　終わり-->
 
     <!-- 書類申請のショートカット　始まり-->
     <div class="col-6">
-    <div class = article>
     <h2>・書類申請状況</h2>
     <div class = "text-center">
       <table class="table table-bordered">
@@ -101,8 +94,8 @@
         <tbody>
           <tr>
           @foreach ($request as $data)
-        <td>{{{ $data }}}</td>
-        @endforeach
+          <td>{{{ $data }}}</td>
+          @endforeach
           </tr>
           <tr>
             <td>サンプル</td>
@@ -127,7 +120,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
     </div>
     </div>
 </div>
