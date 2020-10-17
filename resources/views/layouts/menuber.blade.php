@@ -8,7 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         <style>
-        .main {
+        .home_main{
+            padding-top:50px;
+        }
+        .create_main {
             border:double;
             padding:30px;
             margin:30px;
@@ -30,7 +33,7 @@
             margin: 1em 1%;
             overflow: hidden;
             width: 100%;
-            margin: 25px 0px 25px 0px;
+            margin: 50px 0px 50px 0px;
         }
         .cp_navi ul {
             margin: 0;
@@ -100,6 +103,7 @@
         }
         .cp_navi > ul > li > div ul > li:hover > a {
             background-color: rgba( 255, 255, 255, 0.1);
+
         }
         h2 {
             border-bottom: solid 3px #cce4ff;
@@ -120,7 +124,7 @@
         </style>
     </head>
     <body>
-    <div class="col-md-11 mx-auto">
+    <div class="col-md-10 mx-auto">
     <div class="cp_navi">
         <ul>
             <li><a href = {{ action('Member\HomeController@add') }}>Home</a></li>

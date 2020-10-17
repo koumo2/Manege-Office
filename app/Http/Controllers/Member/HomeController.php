@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Article;
 
 class HomeController extends Controller
 
@@ -31,19 +33,26 @@ class HomeController extends Controller
     ];
     $articles = [
       'date1' => '1',
-      'date2' => 'ポートフォリオの作成について',
+      'date2' => 'ポートフォリオの作成',
       'date3' => '無',
       'date4' => '2020/10/17',
       'date5' => '甲元和馬'
     ];
-    $request = [
+    $request1 = [
       'date1' => '1',
       'date2' => 'ABCの仕様書について',
       'date3' => '2020/10/17',
       'date4' => '甲元和馬',
       'date5' => '○'
     ];
-    return view('home.home',compact('dates','contents','articles','request'));
+    $request2 = [
+      'date1' => '2',
+      'date2' => '出張伺書',
+      'date3' => '2020/10/17',
+      'date4' => '甲元和馬',
+      'date5' => '×'
+    ];
+    return view('home.home',compact('dates','contents','articles','request1','request2'));
   }
   //回覧板画面
   public function article_home()
@@ -63,7 +72,7 @@ class HomeController extends Controller
   }
   public function article_content()
   {
-  return view('home.article.content');
+    return view('home.article.content');
   }
   //スケジュール画面
   public function schedule_home()

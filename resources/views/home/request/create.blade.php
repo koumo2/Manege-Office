@@ -5,10 +5,10 @@
 
 <div class="col-md-8 mx-auto">
 <h2>書類申請作成画面</h2>
-<div class=main>
+<div class = create_main>
       <div class="form-group">
         <label class="col-sm-4 control-label">分類 <span class="label label-danger"><font color="red">    ※必須</font></span></label>
-        <div class="col-sm-4">
+        <div class="col-sm-8">
           <input type="text" name="genre" class="form-control" placeholder="分類" required />
       </div>
       <div class="form-group">
@@ -17,17 +17,19 @@
           <input type="text" name="title" class="form-control" placeholder="タイトル" required />
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-sm-4 control-label">作成日 <span class="label label-danger"><font color="red"> ※必須</font></span></label>
-        <div class="col-sm-4">
+      <div class="form-row">
+      <div class="form-group col-6">
+        <label class="col-sm-8 control-label">作成日 <span class="label label-danger"><font color="red"> ※必須</font></span></label>
+        <div class="col-sm-11">
           <input type="text" name="date" class="form-control" placeholder="○○○○年△△月××日" required />
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-sm-4 control-label">作成者 <span class="label label-danger"><font color="red"> ※必須</font></span></label>
-        <div class="col-sm-4">
-          <input type="text" name="name" class="form-control" placeholder="氏名" required />
+      <div class="form-group col-6">
+        <label class="col-sm-8 control-label">作成者 <span class="label label-danger"><font color="red"> ※必須</font></span></label>
+        <div class="col-sm-11">
+          <input type="text" name="name" class="form-control" placeholder="{{Auth::user()->name}}" required />
         </div>
+      </div>
       </div>
       <div class="form-group">
         <label class="col-md-6 control-label">内容<span class="label label-danger"><font color="red">    ※必須</font></span></label>
@@ -47,6 +49,7 @@
         </div>
       </div>
       <div class=return><a href = home><input type="submit" value="戻る"></a></div>
+      </div>
 </div>
 
 @endsection

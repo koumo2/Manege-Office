@@ -14,7 +14,7 @@ label {
 </style>
 <div class="col-md-8 mx-auto">
 <h2>スケジュール新規作成</h2>
-     <div class=main>
+     <div class = create_main>
       <div class="form-group">
         <label class="col-sm-4 control-label">分類 <span class="label label-danger"><font color="red">    ※必須</font></span></label>
         <div class="col-sm-4">
@@ -27,17 +27,19 @@ label {
           <input type="text" name="title" class="form-control" placeholder="タイトル" required />
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-sm-4 control-label">開始日時 <span class="label label-danger"><font color="red">    ※必須</font></span></label>
-        <div class="col-sm-4">
+      <div class="form-row">
+      <div class="form-group col-6">
+        <label class="col-sm-8 control-label">開始日時 <span class="label label-danger"><font color="red">    ※必須</font></span></label>
+        <div class="col-sm-11">
           <input type="text" name="start" class="form-control" placeholder="開始日時" required />
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-sm-4 control-label">終了日時 <span class="label label-danger"><font color="red">    ※必須</font></span></label>
-        <div class="col-sm-4">
+      <div class="form-group col-6">
+        <label class="col-sm-8 control-label">終了日時 <span class="label label-danger"><font color="red">    ※必須</font></span></label>
+        <div class="col-sm-11">
           <input type="text" class="form-control" name="end" class="form-control" placeholder="終了日時" required />
         </div>
+      </div>
       </div>
       <div class="form-group">
         <label class="col-md-6 control-label">内容<span class="label label-danger"><font color="red">    ※必須</font></span></label>

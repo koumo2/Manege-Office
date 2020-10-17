@@ -3,17 +3,22 @@
 
 @section('title', "書類申請＿ホーム")
 @section('content')
- <h1>書類申請ホーム画面</h1>
 
-<!-- 新規ボタン-->
+<div class=home_main>
+<div class="row">
+<div class="col-8"><h2>申請書類一覧</h2></div>
+<div class="col-1">
 <a href = create><input type="submit" value="新規申請"></a>
-
+</div>
 <!-- 検索ボタン-->
+<div class="col-3">
 <form method="get" action="#" class="search_container">
   <input type="text" size="25" placeholder="　キーワード検索">
   <input type="submit" value="検索">
 </form>
-<h2>書類申請一覧</h2>
+</div>
+</div>
+
 <div class = "text-center">
   <div class="container-fluid">
   <div class = article>
@@ -81,5 +86,6 @@
   </table>
   </div>
   </div>
+</div>
 </div>
 @endsection

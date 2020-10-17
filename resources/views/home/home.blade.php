@@ -2,7 +2,7 @@
 
 @section('title', "ホーム画面")
 @section('content')
-
+<div class = home_main>
   <h2>・スケジュール</h2>
   <div class = "text-center">
   <div class="container-fluid">
@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr style='height:100px',class="align-middle">
         @foreach ($contents as $content)
         @if($content == "休み")
         <td><span style="color:#FF0000;">{{{ $content }}}</span></td>
@@ -27,11 +27,13 @@
   </table>
   </div>
   </div>
+</div>
 
     <!-- スケジュールのショートカット　始まり-->
 <div class="container-fluid">
 <div class ="row">
-    <div class="col-6">
+    <div class="col-sm-6">
+    <div class = home_main>
     <h2>・回覧板</h2>
     <div class = "text-center">
     <table class="table table-bordered">
@@ -50,35 +52,16 @@
         <td>{{{ $article }}}</td>
         @endforeach
         </tr>
-        <tr>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-        </tr>
-        <tr>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-        </tr>
-        <tr>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-          <td>サンプル</td>
-        </tr>
       </tbody>
     </table>
     </div>
 </div>
+</div>
     <!-- スケジュールのショートカット　終わり-->
 
     <!-- 書類申請のショートカット　始まり-->
-    <div class="col-6">
+    <div class="col-sm-6">
+    <div class = home_main>
     <h2>・書類申請状況</h2>
     <div class = "text-center">
       <table class="table table-bordered">
@@ -93,35 +76,30 @@
         </thead>
         <tbody>
           <tr>
-          @foreach ($request as $data)
-          <td>{{{ $data }}}</td>
-          @endforeach
+            @foreach ($request1 as $data)
+            @if($data == "×")
+            <td><span style="color:#FF0000;">{{{ $data }}}</span></td>
+            @elseif($data == "○")
+            <td><span style="color:#0000FF;">{{{ $data }}}</span></td>
+            @else<td>{{{ $data }}}</td>
+            @endif
+            @endforeach
           </tr>
           <tr>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
-          </tr>
-          <tr>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
-          </tr>
-          <tr>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
-            <td>サンプル</td>
+            @foreach ($request2 as $data)
+            @if($data == "×")
+            <td><span style="color:#FF0000;">{{{ $data }}}</span></td>
+            @elseif($data == "○")
+            <td><span style="color:#0000FF;">{{{ $data }}}</span></td>
+            @else<td>{{{ $data }}}</td>
+            @endif
+            @endforeach
           </tr>
         </tbody>
       </table>
     </div>
     </div>
+</div>
 </div>
 </div>
 <!-- 書類申請のショートカット　終わり-->
