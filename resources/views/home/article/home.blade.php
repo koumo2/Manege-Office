@@ -31,51 +31,24 @@
         <th>添付有無</th>
         <th>作成日</th>
         <th>作成者</th>
+        <th>内容</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
       @foreach ($datas as $data)
-      <td>{{{ $data }}}</td>
+        <tr>
+          <td>{{{ $data -> id }}}</td>
+          <td>{{{ $data -> title }}}</td>
+          <td>有</td>
+          <td>{{{ $data -> date }}}</td>
+          <td>{{{ $data -> name }}}</td>
+          <td>{{{ $data -> contents }}}</td>
+        </tr>
       @endforeach
-      </tr>
-      <tr>
-      @foreach ($datas as $data)
-      <td>{{{ $data }}}</td>
-      @endforeach
-      </tr>
-      <tr>
-      <td>3</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-      </tr>
-      <tr>
-      <td>4</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-        <td>サンプル</td>
-      </tr>
     </tbody>
   </table>
   </div>
- </div>
+</div>
 </div>
 </div>
 @endsection

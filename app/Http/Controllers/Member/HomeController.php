@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Member;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Article;
+use App\Models\Article;
 
 class HomeController extends Controller
 
@@ -57,13 +57,8 @@ class HomeController extends Controller
   //回覧板画面
   public function article_home()
   {
-    $datas = [
-      'no' => '1',
-      'title' => 'ポートフォリオの作成について',
-      'attachment' => '無',
-      'date' => '2020/01/01',
-      'name' => '甲元　和馬'
-    ];
+    $datas = Article::all();
+
   return view('home.article.home',['datas' => $datas]);
   }
   public function article_create()

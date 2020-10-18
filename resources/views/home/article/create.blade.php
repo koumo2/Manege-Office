@@ -20,15 +20,23 @@
       </div>
       <div class="form-row">
       <div class="form-group col-6">
+        <!-- 下記JSをHTML内に入れたい -->
+      <sprict>
+        var today=new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth()+1;
+        var day = today.getDate();
+        document.write(year+"年"+month+"月"+day+"日");
+      </sprict>
         <label class="col-sm-8 control-label">作成日 <span class="label label-danger"><font color="red"> ※必須</font></span></label>
         <div class="col-sm-11">
-          <input type="text" name="date" class="form-control" placeholder="○○○○年△△月××日" required />
+          <input type="text" name="date" class="form-control" placeholder="あああ" readonly />
         </div>
       </div>
       <div class="form-group col-6">
-        <label class="col-sm-8 control-label">作成者 <span class="label label-danger"><font color="red"> ※必須</font></span></label>
+        <label class="col-sm-8 control-label">作成者 <span class="label label-danger"><font color="red"></font></span></label>
         <div class="col-sm-11">
-          <input type="text" name="name" class="form-control" placeholder="{{Auth::user()->name}}" required />
+          <input type="text" name="name" class="form-control" placeholder="{{Auth::user()->name}}" readonly />
         </div>
       </div>
       </div>
