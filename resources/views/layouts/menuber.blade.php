@@ -3,7 +3,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="/js/app.js" defer></script>
         <meta charset="utf-8">
+        <meta name="csrf_token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
@@ -157,6 +159,11 @@
             </li>
         </ul>
     </div>
+    <footer class="footer bg-dark  fixed-bottom">
+        <div class="container text-center">
+        <span class="text-light">groupware(仮)</span>
+        </div>
+    </footer>
     @yield('content')
     </div>
     </body>

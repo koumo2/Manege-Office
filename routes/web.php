@@ -19,10 +19,12 @@ Route::group(['prefix' => 'member'], function() {
     Route::get('home/home', 'Member\HomeController@add'); //ホーム画面へのアクセス
 });
 
-Route::group(['prefix' => 'member/home','middleware' => 'auth'], function() {
-    Route::get('article/home', 'Member\HomeController@article_home'); //回覧板ホーム画面へのアクセス
+Route::group(['prefix' => 'member','middleware' => 'auth'], function() {
+    Route::get('article/home', 'Member\HomeController@article_home')->name('article_home'); //回覧板ホーム画面へのアクセス
+
     Route::get('article/create', 'Member\HomeController@article_create'); //回覧板作成画面へのアクセス
-    Route::get('article/content', 'Member\HomeController@article_content'); //回覧板内容確認画面へのアクセス
+
+    Route::get('article/content/{id}', 'Member\HomeController@article_content'); //回覧板内容確認画面へのアクセス
     Route::get('schedule/home', 'Member\HomeController@schedule_home'); //スケジュールホーム画面へのアクセス
     Route::get('schedule/create', 'Member\HomeController@schedule_create'); //スケジュール作成画面へのアクセス
     Route::get('schedule/content', 'Member\HomeController@schedule_content'); //スケジュール内容確認画面へのアクセス

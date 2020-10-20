@@ -57,43 +57,47 @@ class HomeController extends Controller
   //回覧板画面
   public function article_home()
   {
-    $datas = Article::all();
-
-  return view('home.article.home',['datas' => $datas]);
+    $articles = Article::all();
+    return view('article.home',['articles' => $articles]);
   }
   public function article_create()
   {
-  return view('home.article.create');
+    return view('article.create');
   }
-  public function article_content()
+  public function article_content($id)
   {
-    return view('home.article.content');
+    $articles = Article::find($id);
+    if(is_null($articles)){
+      \Session::flash('err_msg', 'データがありません。');
+      return redirect(route('article_home'));
+    }
+    return view('article.content',['articles' => $articles]);
   }
   //スケジュール画面
   public function schedule_home()
   {
-  return view('home.schedule.home');
+  return view('schedule.home');
   }
   public function schedule_create()
   {
-  return view('home.schedule.create');
+  return view('schedule.create');
   }
   public function schedule_content()
   {
-  return view('home.schedule.content');
+  return view('schedule.content');
   }
   //書類申請画面
   public function request_home()
   {
-  return view('home.request.home');
+  return view('request.home');
   }
   public function request_create()
   {
-  return view('home.request.create');
+  return view('request.create');
   }
   public function request_content()
   {
-  return view('home.request.content');
+  return view('request.content');
   }
 }
 ?>
