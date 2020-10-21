@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
+use App\Http\Requests\ArticleRequest;
 
 class HomeController extends Controller
 
@@ -63,6 +64,22 @@ class HomeController extends Controller
   public function article_create()
   {
     return view('article.create');
+  }
+  public function article_store(ArticleRequest $request)
+  {
+      $inputs = $request->all();
+
+      \DB::beginTransaction();
+      try {
+          Article::create($inputs);
+          \DB::commit();
+      } catch (\Throwable $e) {
+          \DB::rollback();
+          abort(500);
+      }
+    Article::create();
+      \Session::flash('err_msg', '回覧板を投稿しました');
+    return redirect(route('article_home'));
   }
   public function article_content($id)
   {
