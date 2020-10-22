@@ -10,6 +10,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         <style>
+        .max_300px{
+            display: block;
+            width: 600px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
         .home_main{
             padding-top:50px;
         }
