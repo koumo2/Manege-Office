@@ -23,7 +23,7 @@ Route::group(['prefix' => 'member','middleware' => 'auth'], function() {
     Route::get('article/home', 'Member\HomeController@article_home')->name('article_home'); //回覧板ホーム画面へのアクセス
     Route::get('article/create', 'Member\HomeController@article_create')->name('article_create'); //回覧板作成画面へのアクセス
     Route::post('article/store', 'Member\HomeController@article_store')->name('article_store');
-    Route::get('article/content/{id}', 'Member\HomeController@article_content'); //回覧板内容確認画面へのアクセス
+    Route::get('article/content/{id}', 'Member\HomeController@article_content')->name('article_content'); //回覧板内容確認画面へのアクセス
     Route::get('schedule/home', 'Member\HomeController@schedule_home'); //スケジュールホーム画面へのアクセス
     Route::get('schedule/create', 'Member\HomeController@schedule_create'); //スケジュール作成画面へのアクセス
     Route::get('schedule/content', 'Member\HomeController@schedule_content'); //スケジュール内容確認画面へのアクセス

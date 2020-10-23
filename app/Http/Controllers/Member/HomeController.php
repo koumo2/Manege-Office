@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
 use App\Http\Requests\ArticleRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 
@@ -68,28 +70,53 @@ class HomeController extends Controller
   public function article_store(ArticleRequest $request)
   {
       $inputs = $request->all();
-
-      \DB::beginTransaction();
-      try {
-          Article::create($inputs);
-          \DB::commit();
-      } catch (\Throwable $e) {
-          \DB::rollback();
-          abort(500);
-      }
-    Article::create();
-      \Session::flash('err_msg', '回覧板を投稿しました');
+      $inputs['image_path']="aaa";
+      $inputs['date']="2014-08-06 21:15:49";
+      // dd($inputs);
+      // $inputs['name']="aaa";
+      // $inputs = array('title' => 'ddd','name' => 'aaa','date' => '2014-08-06 21:15:49','contents'=>'fff','image_path' => 'ccc');
+      // DB::beginTransaction();
+      // try {
+      //     Article::create($inputs);
+      //     DB::commit();
+      //     }catch(Exception $exception) {
+      //       // データ操作を巻き戻す
+      //       DB::rollBack();
+      //       throw $exception;
+      // }
+      // } catch (\Throwable $e) {
+      //     DB::rollback();
+      //     abort(500);
+      // }
+      DB::beginTransaction();
+          try {
+              Article::create($inputs);
+              DB::commit();
+          } catch (\Throwable $e) {
+              DB::rollback();
+              abort(500);
+          }
+      Session::flash('err_msg', '回覧板を投稿しました');
     return redirect(route('article_home'));
   }
   public function article_content($id)
   {
-    $articles = Article::find($id);
-    if(is_null($articles)){
-      \Session::flash('err_msg', 'データがありません。');
+    $article = Article::find($id);
+    if(is_null($article)){
+      Session::flash('err_msg', 'データがありません。');
       return redirect(route('article_home'));
     }
-    return view('article.content',['articles' => $articles]);
+    return view('article.content',['article' => $article]);
   }
+
+
+
+
+
+
+
+
+
   //スケジュール画面
   public function schedule_home()
   {
