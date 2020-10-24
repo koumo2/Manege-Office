@@ -10,16 +10,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         <style>
+        .max_20px{
+            display: block;
+            width:20px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .max_100px{
+            display: block;
+            width:100px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .max_150px{
+            display: block;
+            width: 150px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
         .max_200px{
             display: block;
-            width: 300px;
+            width: 110px;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
         }
         .max_300px{
             display: block;
-            width: 500px;
+            width: 300px;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;

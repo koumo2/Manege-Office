@@ -34,13 +34,7 @@ class HomeController extends Controller
       'content6' => '会議',
       'content7' => '休み'
     ];
-    $articles = [
-      'date1' => '1',
-      'date2' => 'ポートフォリオの作成',
-      'date3' => '無',
-      'date4' => '2020/10/17',
-      'date5' => '甲元和馬'
-    ];
+    $articles = Article::all();
     $request1 = [
       'date1' => '1',
       'date2' => 'ABCの仕様書について',
@@ -55,7 +49,7 @@ class HomeController extends Controller
       'date4' => '甲元和馬',
       'date5' => '×'
     ];
-    return view('home.home',compact('dates','contents','articles','request1','request2'));
+    return view('home.home',['articles' => $articles],compact('dates','contents','$articles','request1','request2'));
   }
   //回覧板画面
   public function article_home()
@@ -69,9 +63,18 @@ class HomeController extends Controller
   }
   public function article_store(ArticleRequest $request)
   {
+      $article = new Article;
       $inputs = $request->all();
-      $inputs['image_path']="aaa";
-      $inputs['date']="2014-08-06 21:15:49";
+      // dd($inputs);
+      // $inputs['image_path']="aaa";
+
+      if (isset($inputs['image'])) {
+        $path = $request->file('sample_image')->store('public/image');
+        $article->image_path = basename($path);
+      } else {
+        $article->image_path = null;
+      }
+      // $inputs['date']="2014-08-06 21:15:49";
       // dd($inputs);
       // $inputs['name']="aaa";
       // $inputs = array('title' => 'ddd','name' => 'aaa','date' => '2014-08-06 21:15:49','contents'=>'fff','image_path' => 'ccc');
@@ -99,6 +102,8 @@ class HomeController extends Controller
       Session::flash('err_msg', '回覧板を投稿しました');
     return redirect(route('article_home'));
   }
+
+
   public function article_content($id)
   {
     $article = Article::find($id);
@@ -108,6 +113,8 @@ class HomeController extends Controller
     }
     return view('article.content',['article' => $article]);
   }
+
+
   public function article_edit($id)
   {
     $article = Article::find($id);
@@ -121,7 +128,7 @@ class HomeController extends Controller
   {
       $inputs = $request->all();
       $inputs['image_path']="aaa";
-      $inputs['date']="2014-08-06 21:15:49";
+      // $inputs['date']="2014-08-06 21:15:49";
 
       DB::beginTransaction();
           try {
@@ -136,7 +143,7 @@ class HomeController extends Controller
               DB::rollback();
               abort(500);
           }
-      Session::flash('err_msg', '回覧板を投稿しました');
+      Session::flash('err_msg', '回覧板を更新しました');
     return redirect(route('article_home'));
   }
   public function article_delete($id)
@@ -150,7 +157,7 @@ class HomeController extends Controller
       } catch (\Throwable $e) {
         abort(500);
       }
-      Session::flash('err_msg', '削除しました');
+      Session::flash('err_msg', '回覧板を削除しました');
       return redirect(route('article_home'));
   }
 

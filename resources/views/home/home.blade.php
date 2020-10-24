@@ -39,19 +39,29 @@
           <table class="table table-bordered">
             <thead class="thead-light">
               <tr>
-                <th>No</th>
-                <th>タイトル</th>
-                <th>添付有無</th>
-                <th>作成日</th>
-                <th>作成者</th>
+                <th width="20px">No</th>
+                <th width="150px">タイトル</th>
+                <th width="100px">作成日</th>
+                <th width="100px">作成者</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
               @foreach ($articles as $article)
-              <td>{{{ $article }}}</td>
-              @endforeach
+              <tr>
+              <div class="max_20px">
+                <td>{{ $article -> id }}</td>
+              </div>
+              <div class="max_150px">
+                <td>
+                  <a href="/groupware/public/member/article/content/{{ $article -> id }}">{{ $article -> title }}</a>
+                </td>
+              </div>
+              <div class="max_100px">
+                <td>{{ $article -> updated_at }}</td>
+                <td>{{ $article -> name }}</td>
+              </div>
               </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
