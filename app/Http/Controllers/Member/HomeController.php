@@ -108,14 +108,51 @@ class HomeController extends Controller
     }
     return view('article.content',['article' => $article]);
   }
+  public function article_edit($id)
+  {
+    $article = Article::find($id);
+    if(is_null($article)){
+      Session::flash('err_msg', 'データがありません。');
+      return redirect(route('article_home'));
+    }
+    return view('article.edit',['article' => $article]);
+  }
+  public function article_update(ArticleRequest $request)
+  {
+      $inputs = $request->all();
+      $inputs['image_path']="aaa";
+      $inputs['date']="2014-08-06 21:15:49";
 
-
-
-
-
-
-
-
+      DB::beginTransaction();
+          try {
+              $article = Article::find($inputs['id']);
+              $article->fill([
+                'title' => $inputs['title'],
+                'contents' => $inputs['contents'],
+              ]);
+              $article->save();
+              DB::commit();
+          } catch (\Throwable $e) {
+              DB::rollback();
+              abort(500);
+          }
+      Session::flash('err_msg', '回覧板を投稿しました');
+    return redirect(route('article_home'));
+  }
+  public function article_delete($id)
+  {
+      if (empty($id)) {
+          Session::flash('err_msg', 'データがありません。');
+          return redirect(route('article_home'));
+      }
+      try {
+        Article::destroy($id);
+      } catch (\Throwable $e) {
+        abort(500);
+      }
+      Session::flash('err_msg', '削除しました');
+      return redirect(route('article_home'));
+  }
 
   //スケジュール画面
   public function schedule_home()
