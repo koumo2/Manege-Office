@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         <style>
-        .max_20px{
+        .max_30px{
             display: block;
-            width:20px;
+            width:30px;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -33,7 +33,14 @@
         }
         .max_200px{
             display: block;
-            width: 110px;
+            width: 200px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .max_250px{
+            display: block;
+            width: 250px;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -140,7 +147,6 @@
         }
         .cp_navi > ul > li > div ul > li:hover > a {
             background-color: rgba( 255, 255, 255, 0.1);
-
         }
         h2 {
             border-bottom: solid 3px #cce4ff;
@@ -189,6 +195,14 @@
                     <ul>
                         <li><a href = {{ action('Member\HomeController@request_home') }} >ホーム</a></li>
                         <li><a href = {{ action('Member\HomeController@request_create') }} >新規申請</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href={{ action('Member\HomeController@add') }}>ログイン者名<span class="caret"></span></a>
+                <div>
+                    <ul>
+                        <li><a href= "/groupware/public/member/home/logout" >ログアウト</a></li>
                     </ul>
                 </div>
             </li>

@@ -74,23 +74,6 @@ class HomeController extends Controller
       } else {
         $article->image_path = null;
       }
-      // $inputs['date']="2014-08-06 21:15:49";
-      // dd($inputs);
-      // $inputs['name']="aaa";
-      // $inputs = array('title' => 'ddd','name' => 'aaa','date' => '2014-08-06 21:15:49','contents'=>'fff','image_path' => 'ccc');
-      // DB::beginTransaction();
-      // try {
-      //     Article::create($inputs);
-      //     DB::commit();
-      //     }catch(Exception $exception) {
-      //       // データ操作を巻き戻す
-      //       DB::rollBack();
-      //       throw $exception;
-      // }
-      // } catch (\Throwable $e) {
-      //     DB::rollback();
-      //     abort(500);
-      // }
       DB::beginTransaction();
           try {
               Article::create($inputs);
@@ -102,8 +85,6 @@ class HomeController extends Controller
       Session::flash('err_msg', '回覧板を投稿しました');
     return redirect(route('article_home'));
   }
-
-
   public function article_content($id)
   {
     $article = Article::find($id);
@@ -183,9 +164,16 @@ class HomeController extends Controller
   {
   return view('request.create');
   }
-  public function request_content()
+  public function equest_content()
   {
   return view('request.content');
+  }
+
+// ログアウトしログイン画面へ移動
+  public function logout()
+  {
+  Auth::logout();
+	return redirect('login');
   }
 }
 ?>

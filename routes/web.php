@@ -33,6 +33,7 @@ Route::group(['prefix' => 'member','middleware' => 'auth'], function() {
     Route::get('request/home', 'Member\HomeController@request_home'); //書類申請ホーム画面へのアクセス
     Route::get('request/create', 'Member\HomeController@request_create'); //書類申請作成画面へのアクセス
     Route::get('request/content', 'Member\HomeController@request_content'); //書類申請内容確認画面へのアクセス
+    Route::get('home/logout', 'Member\HomeController@logout'); //書類申請内容確認画面へのアクセス
 });
 Auth::routes();
 
