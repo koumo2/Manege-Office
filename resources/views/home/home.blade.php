@@ -73,7 +73,7 @@
     <div class="col-sm-6">
       <div class = home_main>
       <h2>・書類申請状況</h2>
-        <div class = "text-center">
+        <!-- <div class = "text-center">
           <table class="table table-bordered">
             <thead class="thead-light">
               <tr>
@@ -107,7 +107,24 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> -->
+        <canvas id="myChart"></canvas>
+        <script>
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+          labels: ['１月', '２月', '３月', '４月', '５月', '６月', '７月'],
+          datasets: [{
+          label: 'マイグラフ',
+          data: [25, 10, 5, 2, 20, 30, 45],
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)'
+          }]
+          },
+          options: {}
+          });
+        </script>
       </div>
     </div>
   </div>
