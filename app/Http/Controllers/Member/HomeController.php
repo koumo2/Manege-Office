@@ -36,20 +36,41 @@ class HomeController extends Controller
     ];
     $articles = Article::all();
     $request1 = [
-      'date1' => '1',
-      'date2' => 'ABCの仕様書について',
-      'date3' => '2020/10/17',
-      'date4' => '甲元和馬',
-      'date5' => '○'
+      'data1' => '1',
+      'data2' => 'ABCの仕様書について',
+      'data3' => '2020/10/17',
+      'data4' => '甲元和馬',
+      'data5' => '○'
     ];
     $request2 = [
-      'date1' => '2',
-      'date2' => '出張伺書',
-      'date3' => '2020/10/17',
-      'date4' => '甲元和馬',
-      'date5' => '×'
+      'data1' => '2',
+      'data2' => '出張伺書',
+      'data3' => '2020/10/17',
+      'data4' => '甲元和馬',
+      'data5' => '×'
     ];
-    return view('home.home',['articles' => $articles],compact('dates','contents','$articles','request1','request2'));
+    $request3 = [
+      'data1' => '3',
+      'data2' => 'ABCの仕様書について',
+      'data3' => '2020/10/17',
+      'data4' => '甲元和馬',
+      'data5' => '○'
+    ];
+    $request4 = [
+      'data1' => '4',
+      'data2' => '出張伺書',
+      'data3' => '2020/10/17',
+      'data4' => '甲元和馬',
+      'data5' => '×'
+    ];
+    $request5 = [
+      'data1' => '5',
+      'data2' => '出張伺書',
+      'data3' => '2020/10/17',
+      'data4' => '甲元和馬',
+      'data5' => '×'
+    ];
+    return view('home.home',['articles' => $articles],compact('dates','contents','$articles','request1','request2','request3','request4','request5'));
   }
   //回覧板画面
   public function article_home()
