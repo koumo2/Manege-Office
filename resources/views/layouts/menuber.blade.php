@@ -209,11 +209,6 @@
             </li>
         </ul>
     </div>
-    <footer class="footer bg-dark  fixed-bottom">
-        <div class="container text-center">
-        <span class="text-light">groupware(仮)</span>
-        </div>
-    </footer>
     @yield('content')
     </div>
     </body>

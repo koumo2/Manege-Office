@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\Session;
 class HomeController extends Controller
 
 {
-  //ホーム画面
+  /**
+   *メインホーム画面を表示
+   *
+   *
+  */
   public function add()
   {
     $dates = [
@@ -72,16 +76,32 @@ class HomeController extends Controller
     ];
     return view('home.home',['articles' => $articles],compact('dates','contents','$articles','request1','request2','request3','request4','request5'));
   }
-  //回覧板画面
+
+  /**
+   *回覧板ホーム画面を表示
+   *
+   *
+  */
   public function article_home()
   {
     $articles = Article::all();
     return view('article.home',['articles' => $articles]);
   }
+
+  /**
+   *回覧板作成画面を表示
+   *
+   *
+  */
   public function article_create()
   {
     return view('article.create');
   }
+  /**
+   *回覧板登録
+   *
+   *
+  */
   public function article_store(ArticleRequest $request)
   {
       $article = new Article;
@@ -106,6 +126,11 @@ class HomeController extends Controller
       Session::flash('err_msg', '回覧板を投稿しました');
     return redirect(route('article_home'));
   }
+  /**
+   *回覧板内容確認
+   *
+   *
+  */
   public function article_content($id)
   {
     $article = Article::find($id);
@@ -116,7 +141,11 @@ class HomeController extends Controller
     return view('article.content',['article' => $article]);
   }
 
-
+/**
+   *回覧板編集画面を表示
+   *
+   *
+  */
   public function article_edit($id)
   {
     $article = Article::find($id);
@@ -126,6 +155,11 @@ class HomeController extends Controller
     }
     return view('article.edit',['article' => $article]);
   }
+/**
+  *回覧板更新
+  *
+  *
+ */
   public function article_update(ArticleRequest $request)
   {
       $inputs = $request->all();
@@ -148,6 +182,11 @@ class HomeController extends Controller
       Session::flash('err_msg', '回覧板を更新しました');
     return redirect(route('article_home'));
   }
+  /**
+  *回覧板削除
+  *
+  *
+ */
   public function article_delete($id)
   {
       if (empty($id)) {
@@ -162,7 +201,13 @@ class HomeController extends Controller
       Session::flash('err_msg', '回覧板を削除しました');
       return redirect(route('article_home'));
   }
-
+  
+// ログアウトしログイン画面へ移動
+  public function logout()
+  {
+  Auth::logout();
+  return redirect('login');
+  }
   //スケジュール画面
   public function schedule_home()
   {
@@ -185,16 +230,10 @@ class HomeController extends Controller
   {
   return view('request.create');
   }
-  public function equest_content()
+  public function request_content()
   {
   return view('request.content');
   }
 
-// ログアウトしログイン画面へ移動
-  public function logout()
-  {
-  Auth::logout();
-	return redirect('login');
-  }
 }
 ?>
