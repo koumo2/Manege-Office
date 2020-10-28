@@ -54,7 +54,7 @@
             overflow: hidden;
         }
         .home_main{
-            padding-top:50px;
+            padding-top:20px;
         }
         .create_main {
             border:double;
@@ -68,19 +68,19 @@
             border:solid;
             border-color:#031de2;
         }
-        .cp_navi {
+        .cp_navi > nav > div {
             background-color: #ffffff;
             border: 1px solid #dedede;
             border-radius: 4px;
             box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
             color: #888888;
-            display: block;
+            display: inline-block;
             margin: 1em 1%;
             overflow: hidden;
             width: 100%;
-            margin: 50px 0px 50px 0px;
+            margin: 35px 0px 55px 0px;
         }
-        .cp_navi ul {
+        .cp_navi  > nav > div > ul {
             margin: 0;
             padding: 0;
         }
@@ -90,35 +90,23 @@
             -webkit-transition: all 0.2s;
                 transition: all 0.2s;
         }
-        .cp_navi > ul > li > a > .caret {
-            border-top: 4px solid #aaaaaa;
-            border-right: 4px solid transparent;
-            border-left: 4px solid transparent;
-            content: '';
-            display: inline-block;
-            height: 0;
-            width: 0;
-            vertical-align: middle;
-            -webkit-transition: color 0.1s linear;
-                transition: color 0.1s linear;
-        }
-        .cp_navi > ul > li > a {
+        .cp_navi > nav > div > ul > li > a {
             color: #aaaaaa;
             display: block;
             line-height: 56px;
             padding: 0 10px;
             text-decoration: none;
         }
-        .cp_navi > ul > li:hover {
+        .cp_navi > nav > div > ul > li:hover {
             background-color: rgb(80, 180, 255);
         }
-        .cp_navi > ul > li:hover > a {
+        .cp_navi > nav > div > ul > li:hover > a {
             color: rgb( 255, 255, 255 );
         }
-        .cp_navi > ul > li:hover > a > .caret {
+        .cp_navi > nav > div > ul > li:hover > a > .caret {
             border-top-color: rgb( 255, 255, 255 );
         }
-        .cp_navi > ul > li > div {
+        .cp_navi > nav > div > ul > li > div {
             background-color: rgb(80, 180, 255);
             border-top: 0;
             border-radius: 0 0 4px 4px;
@@ -132,21 +120,21 @@
             -webkit-transiton: opacity 0.2s;
                 transition: opacity 0.2s;
         }
-        .cp_navi > ul > li:hover > div {
+        .cp_navi > nav > div > ul > li:hover > div {
             display: block;
             opacity: 1;
             visibility: visible;
         }
-        .cp_navi > ul > li > div ul > li {
+        .cp_navi > nav > div > ul > li > div ul > li {
             display: block;
         }
-        .cp_navi > ul > li > div ul > li > a {
+        .cp_navi > nav > div > ul > li > div ul > li > a {
             color: #ffffff;
             display: block;
             padding: 12px 24px;
             text-decoration: none;
         }
-        .cp_navi > ul > li > div ul > li:hover > a {
+        .cp_navi  > nav > div > ul > li > div ul > li:hover > a {
             background-color: rgba( 255, 255, 255, 0.1);
         }
         h2 {
@@ -168,10 +156,12 @@
         </style>
     </head>
     <body>
-    <div class="col-md-10 mx-auto">
+    <div class="col-md-8 mx-auto">
     <div class="cp_navi">
-        <ul>
-            <li><a href = {{ action('Member\HomeController@add') }}>Home</a></li>
+    <nav class="navbar navbar-expand-md navbar-light bg-white">
+    <div class="container">
+        <ul class="navbar-nav mr-auto">
+            <li><a class="navbar-brand" href = {{ action('Member\HomeController@add') }}>Groupware</a></li>
             <li>
                 <a href = {{ action('Member\HomeController@article_home') }}>回覧板 <span class="caret"></span></a>
                 <div>
@@ -199,6 +189,8 @@
                     </ul>
                 </div>
             </li>
+    </ul>
+    <ul class="navbar-nav">
             <li>
                 <a href={{ action('Member\HomeController@add') }}>ログイン者名<span class="caret"></span></a>
                 <div>
@@ -208,6 +200,9 @@
                 </div>
             </li>
         </ul>
+    </div>
+    </nav>
+    </div>
     </div>
     @yield('content')
     </div>

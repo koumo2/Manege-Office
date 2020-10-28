@@ -1,7 +1,8 @@
 @extends('layouts.menuber')
 @section('title', "回覧板_編集")
 @section('content')
-<div class="col-md-8 mx-auto">
+
+<div class="col-md-6 mx-auto">
   <h2>回覧板編集</h2>
     <div class= create_main >
       <form method="POST" action="{{ route('article_update') }}" onSubmit="return checkSubmit()">

@@ -4,9 +4,11 @@
 @section('title', "回覧板")
 @section('content')
 
+<div class="col-md-8 mx-auto">
 <div class=home_main>
+  
 @if (session('err_msg'))
-<p class="text-danger">
+<p class="text-danger"></p>
   {{ session('err_msg')}}
 </p>
 <span>{{ session('message') }}</span>
@@ -25,7 +27,6 @@
         </form>
       </div>
   </div>
-
   <div class="text-center">
     <div class="container-fluid">
         <table class="table table-bordered">
@@ -59,7 +60,6 @@
                     <form method="POST" action="{{ route('article_delete',$article->id) }}" onSubmit="return checkDelete()">
                     @csrf
                     <button type="submit" class="btn btn-danger btn-sm" onclick=>削除</button>
-
                   </div>
                 </div>
                 </td>
@@ -69,6 +69,8 @@
         </table>
       </div>
   </div>
+</div>
+</div>
 </div>
 <script>
 function checkDelete(){

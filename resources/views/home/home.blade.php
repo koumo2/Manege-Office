@@ -2,7 +2,9 @@
 
 @section('title', "ホーム画面")
 @section('content')
+<div class="col-md-8 mx-auto">
 <div class = home_main>
+
   <h2>・スケジュール</h2>
   <div class = "text-center">
     <div class="container-fluid">
@@ -162,4 +164,5 @@
     </div>
   </div>
 </div>
+          </div>
 @endsection

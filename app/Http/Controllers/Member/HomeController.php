@@ -38,7 +38,7 @@ class HomeController extends Controller
       'content6' => '会議',
       'content7' => '休み'
     ];
-    $articles = Article::all();
+    $articles = Article::paginate(4);
     $request1 = [
       'data1' => '1',
       'data2' => 'ABCの仕様書について',

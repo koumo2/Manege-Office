@@ -3,6 +3,7 @@
 @section('title', "回覧板_内容確認")
 @section('content')
 
+<div class="col-md-9 mx-auto">
 @if(session('err_msg'))
 <p class="text-danger">{{ session('err_mag') }}</p>
 @endif
@@ -34,5 +35,6 @@
         </div>
         <div class=return><a href = home><input type="submit" value="戻る"></a></div>
     </div>
+</div>
 </div>
 @endsection
