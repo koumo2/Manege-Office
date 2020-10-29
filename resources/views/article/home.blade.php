@@ -4,7 +4,7 @@
 @section('title', "回覧板")
 @section('content')
 
-<div class="col-md-8 mx-auto">
+<div class="col-lg-10 mx-auto">
 <div class=home_main>
   
 @if (session('err_msg'))

@@ -15,7 +15,7 @@ Route::group(['prefix' => 'member','middleware' => 'auth'], function() {
 
     /*メイン*/
     //ホーム画面を表示
-    Route::get('home/home', 'Member\HomeController@add');
+    Route::get('home/main', 'Member\HomeController@add');
      //ログアウト
     Route::get('home/logout', 'Member\HomeController@logout');
 

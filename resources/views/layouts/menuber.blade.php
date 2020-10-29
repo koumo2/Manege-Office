@@ -68,7 +68,7 @@
             border:solid;
             border-color:#031de2;
         }
-        .cp_navi > nav > div {
+        .cp_navi > div > nav > div {
             background-color: #ffffff;
             border: 1px solid #dedede;
             border-radius: 4px;
@@ -80,7 +80,7 @@
             width: 100%;
             margin: 35px 0px 55px 0px;
         }
-        .cp_navi  > nav > div > ul {
+        .cp_navi  > div > nav > div > ul {
             margin: 0;
             padding: 0;
         }
@@ -90,23 +90,23 @@
             -webkit-transition: all 0.2s;
                 transition: all 0.2s;
         }
-        .cp_navi > nav > div > ul > li > a {
+        .cp_navi > div > nav > div > ul > li > a {
             color: #aaaaaa;
             display: block;
             line-height: 56px;
             padding: 0 10px;
             text-decoration: none;
         }
-        .cp_navi > nav > div > ul > li:hover {
+        .cp_navi > div > nav > div > ul > li:hover {
             background-color: rgb(80, 180, 255);
         }
-        .cp_navi > nav > div > ul > li:hover > a {
+        .cp_navi > div > nav > div > ul > li:hover > a {
             color: rgb( 255, 255, 255 );
         }
-        .cp_navi > nav > div > ul > li:hover > a > .caret {
+        .cp_navi > div > nav > div > ul > li:hover > a > .caret {
             border-top-color: rgb( 255, 255, 255 );
         }
-        .cp_navi > nav > div > ul > li > div {
+        .cp_navi > div > nav > div > ul > li > div {
             background-color: rgb(80, 180, 255);
             border-top: 0;
             border-radius: 0 0 4px 4px;
@@ -120,21 +120,21 @@
             -webkit-transiton: opacity 0.2s;
                 transition: opacity 0.2s;
         }
-        .cp_navi > nav > div > ul > li:hover > div {
+        .cp_navi > div > nav > div > ul > li:hover > div {
             display: block;
             opacity: 1;
             visibility: visible;
         }
-        .cp_navi > nav > div > ul > li > div ul > li {
+        .cp_navi > div > nav > div > ul > li > div ul > li {
             display: block;
         }
-        .cp_navi > nav > div > ul > li > div ul > li > a {
+        .cp_navi > div > nav > div > ul > li > div ul > li > a {
             color: #ffffff;
             display: block;
-            padding: 12px 24px;
+            padding: 12px 0px 12px 12px;
             text-decoration: none;
         }
-        .cp_navi  > nav > div > ul > li > div ul > li:hover > a {
+        .cp_navi > div > nav > div > ul > li > div ul > li:hover > a {
             background-color: rgba( 255, 255, 255, 0.1);
         }
         h2 {
@@ -151,13 +151,13 @@
             width: 20%;
         }
         main {
-            margin:0 auto;
+            /* margin:0 auto; */
         }
         </style>
     </head>
     <body>
-    <div class="col-md-8 mx-auto">
     <div class="cp_navi">
+    <div class="col-lg-8 mx-auto">
     <nav class="navbar navbar-expand-md navbar-light bg-white">
     <div class="container">
         <ul class="navbar-nav mr-auto">
@@ -189,8 +189,8 @@
                     </ul>
                 </div>
             </li>
-    </ul>
-    <ul class="navbar-nav">
+        </ul>
+        <ul class="navbar-nav">
             <li>
                 <a href={{ action('Member\HomeController@add') }}>ログイン者名<span class="caret"></span></a>
                 <div>

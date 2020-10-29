@@ -30,7 +30,7 @@
         </div>
         <div class="image">
             @if ($article->image_path)
-                <img src="{{ $article->image_path }})">
+                <img src="{{ $article->image_path }}">
             @endif
         </div>
         <div class=return><a href = home><input type="submit" value="戻る"></a></div>

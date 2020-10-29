@@ -3,7 +3,7 @@
 
 @section('title', "書類申請＿ホーム")
 @section('content')
-
+<div class = "col-lg-10 mx-auto">
 <div class=home_main>
 <div class="row">
 <div class="col-8"><h2>申請書類一覧</h2></div>
@@ -86,6 +86,7 @@
   </table>
   </div>
   </div>
+</div>
 </div>
 </div>
 @endsection

@@ -74,7 +74,10 @@ class HomeController extends Controller
       'data4' => '甲元和馬',
       'data5' => '×'
     ];
-    return view('home.home',['articles' => $articles],compact('dates','contents','$articles','request1','request2','request3','request4','request5'));
+    $time = rand(0,45);
+    $total_time = [35,10,40,10,30,50,25,20,45,20];
+
+    return view('home.main',['articles' => $articles],compact('dates','contents','$articles','request1','request2','request3','request4','request5','time','total_time'));
   }
 
   /**
