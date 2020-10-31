@@ -78,7 +78,7 @@
             margin: 1em 1%;
             overflow: hidden;
             width: 100%;
-            margin: 35px 0px 55px 0px;
+            margin: 10px 0px 55px 0px;
         }
         .cp_navi  > div > nav > div > ul {
             margin: 0;
@@ -161,41 +161,88 @@
                     <nav class="navbar navbar-expand-md navbar-light bg-white">
                         <div class="container">
                             <ul class="navbar-nav mr-auto">
-                                <li><a class="navbar-brand" href = {{ action('Member\HomeController@add') }}>Groupware</a></li>
+                                <li><a class="navbar-brand" href = {{ action('Member\HomeController@add') }}>
+                                        Groupware
+                                    </a>
+                                </li>
                                 <li>
-                                    <a href = {{ action('Member\HomeController@article_home') }}>回覧板<span class="caret"></span></a>
+                                    <a href = {{ action('Member\HomeController@article_home') }}>
+                                        回覧板
+                                        <span class="caret">
+                                        </span>
+                                    </a>
                                     <div>
                                         <ul>
-                                            <li><a href = {{ action('Member\HomeController@article_home') }}>ホーム</a></li>
-                                            <li><a href = {{ action('Member\HomeController@article_create') }} >新規作成</a></li>
+                                            <li>
+                                                <a href = {{ action('Member\HomeController@article_home') }}>
+                                                ホーム
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href = {{ action('Member\HomeController@article_create') }} >
+                                                新規作成
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li>
-                                    <a href = {{ action('Member\HomeController@schedule_home') }} >スケジュール<span class="caret"></span></a>
+                                    <a href = {{ action('Member\HomeController@schedule_home') }} >
+                                        スケジュール
+                                        <span class="caret">
+                                        </span>
+                                    </a>
                                     <div>
                                         <ul>
-                                            <li><a href = {{ action('Member\HomeController@schedule_home') }} >ホーム</a></li>
-                                            <li><a href = {{ action('Member\HomeController@schedule_create') }} >新規作成</a></li>
+                                            <li>
+                                                <a href = {{ action('Member\HomeController@schedule_home') }} >
+                                                ホーム
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href = {{ action('Member\HomeController@schedule_create') }} >
+                                                新規作成
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </li>
                                 <li>
-                                    <a href = {{ action('Member\HomeController@request_home') }} >書類申請<span class="caret"></span></a>
+                                    <a href = {{ action('Member\HomeController@request_home') }} >
+                                        書類申請
+                                        <span class="caret">
+                                        </span>
+                                    </a>
                                     <div>
                                         <ul>
-                                            <li><a href = {{ action('Member\HomeController@request_home') }} >ホーム</a></li>
-                                            <li><a href = {{ action('Member\HomeController@request_create') }} >新規申請</a></li>
+                                            <li>
+                                                <a href = {{ action('Member\HomeController@request_home') }} >
+                                                ホーム
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href = {{ action('Member\HomeController@request_create') }} >
+                                                    新規申請
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </li>
                             </ul>
                             <ul class="navbar-nav">
                                 <li>
-                                    <a href={{ action('Member\HomeController@add') }}>{{ Auth::user()->name }} <span class="caret"></span></a>
+                                    <a href={{ action('Member\HomeController@add') }}>
+                                        {{ Auth::user()->name }}
+                                        <span class="caret">
+                                        </span>
+                                    </a>
                                     <div>
                                         <ul>
-                                            <li><a href= "/groupware/public/member/home/logout" >ログアウト</a></li>
+                                            <li>
+                                                <a href= "/groupware/public/member/home/logout" >
+                                                    ログアウト
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </li>

@@ -19,20 +19,6 @@
               @endif
             </div>
           </div>
-          <!-- <div class="form-row">
-          <div class="form-group col-6">
-            <label class="col-sm-8 control-label">作成日</label>
-            <div class="col-sm-11">
-              <input type="text" name="date" class="form-control" value="作成当日の日付を自動入力したい" readonly/>
-            </div>
-          </div>
-          <div class="form-group col-6">
-            <label class="col-sm-8 control-label">作成者</label>
-            <div class="col-sm-11">
-              <input type="text" name="name" class="form-control" value="{{Auth::user()->name}}" readonly/>
-            </div>
-          </div>
-          </div> -->
           <div class="form-group">
             <label class="col-md-6 control-label">内容</label>
               <div class="col-md-12">
@@ -44,11 +30,11 @@
                 @endif
               </div>
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <buttun type="submit" class="btn btn-secondary">画像添付</button>
             </div>
-          </div>
+          </div> -->
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="submit" class="btn btn-primary">更新</button>

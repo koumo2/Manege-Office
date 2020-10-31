@@ -9,6 +9,7 @@ use App\Models\Article;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 
@@ -110,14 +111,13 @@ class HomeController extends Controller
       $article = new Article;
       $inputs = $request->all();
       // dd($inputs);
-      // $inputs['image_path']="aaa";
 
-      if (isset($inputs['image'])) {
-        $path = $request->file('sample_image')->store('public/image');
-        $article->image_path = basename($path);
-      } else {
-        $article->image_path = null;
-      }
+      // if (isset($inputs['image'])) {
+      //   $path = $request->file('image')->store('public/image');
+      //   $article->image_path = basename($path);
+      // } else {
+      //   $article->image_path = null;
+      // }
       DB::beginTransaction();
           try {
               Article::create($inputs);
@@ -129,6 +129,7 @@ class HomeController extends Controller
       Session::flash('err_msg', '回覧板を投稿しました');
     return redirect(route('article_home'));
   }
+
   /**
    *回覧板内容確認
    *

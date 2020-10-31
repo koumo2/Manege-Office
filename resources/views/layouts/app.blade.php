@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
-    .cp_navi > nav > div {
+    .cp_navi > div > nav > div {
             background-color: #ffffff;
             border: 1px solid #dedede;
             border-radius: 4px;
@@ -29,9 +29,9 @@
             margin: 1em 1%;
             overflow: hidden;
             width: 100%;
-            margin: 35px 0px 55px 0px;
+            margin: 30px 0px 55px 0px;
     }
-    .cp_navi  > nav > div > ul {
+    .cp_navi > div > nav > div > ul {
         margin: 0;
         padding: 0;
     }
@@ -41,59 +41,28 @@
         -webkit-transition: all 0.2s;
             transition: all 0.2s;
     }
-    .cp_navi > nav > div > ul > li > a {
+    .cp_navi > div > nav > div > ul > li > a {
         color: #aaaaaa;
         display: block;
         line-height: 56px;
         padding: 0 10px;
         text-decoration: none;
     }
-    .cp_navi > nav > div > ul > li:hover {
+    .cp_navi > div > nav > div > ul > li:hover {
         background-color: rgb(80, 180, 255);
     }
-    .cp_navi > nav > div > ul > li:hover > a {
+    .cp_navi > div > nav > div > ul > li:hover > a {
         color: rgb( 255, 255, 255 );
     }
-    .cp_navi > nav > div > ul > li:hover > a > .caret {
-        border-top-color: rgb( 255, 255, 255 );
-    }
-    .cp_navi > nav > div > ul > li > div {
-        background-color: rgb(80, 180, 255);
-        border-top: 0;
-        border-radius: 0 0 4px 4px;
-        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
-        display: none;
-        margin: 0;
-        opacity: 0;
-        position: absolute;
-        width: 165px;
-        visibility: hidden;
-        -webkit-transiton: opacity 0.2s;
-            transition: opacity 0.2s;
-    }
-    .cp_navi > nav > div > ul > li:hover > div {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-    }
-    .cp_navi > nav > div > ul > li > div ul > li {
-        display: block;
-    }
-    .cp_navi > nav > div > ul > li > div ul > li > a {
-        color: #ffffff;
-        display: block;
-        padding: 12px 24px;
-        text-decoration: none;
-    }
-    .cp_navi  > nav > div > ul > li > div ul > li:hover > a {
-        background-color: rgba( 255, 255, 255, 0.1);
+    .cp_navi > div > nav > div > li:hover > a {
+        color: rgb( 255, 255, 255 );
     }
     </style>
 </head>
 <body>
-    <div id="app">
-        <div class="col-md-8 mx-auto">
-            <div class="cp_navi">
+    <!-- <div id="app"> -->
+        <div class="cp_navi">
+            <div class="col-md-8 mx-auto">
                 <nav class="navbar navbar-expand-md navbar-light bg-white">
                     <div class="container">
                         <ul class="navbar-nav mr-auto">
@@ -105,11 +74,15 @@
                         <ul class="navbar-nav">
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+                                <a class="nav-link" href="{{ route('login') }}">
+                                    ログイン
+                                </a>
                             </li>
                             @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">新規登録</a>
+                                <a class="nav-link" href="{{ route('register') }}">
+                                    新規登録
+                                </a>
                             </li>
                             @endif
                         @else
@@ -134,8 +107,8 @@
                     </div>
                 </nav>
             </div>
+        <!-- </div> -->
         </div>
-    </div>
     <main class="py-4">
     @yield('content')
     </main>

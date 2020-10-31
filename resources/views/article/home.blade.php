@@ -32,28 +32,25 @@
         <table class="table table-bordered">
           <thead class="thead-light">
             <tr>
-              <th width="30">No</th>
-              <th width="70">タイトル</th>
-              <th width="70">内容</th>
-              <th width="50">添付</th>
-              <th width="50">日付</th>
-              <th width="50">作成者</th>
-              <th></th>
-              <!-- <th width="20"></th>
-              <th width="20"></th> -->
+              <th class="col-xs-2">No</th>
+              <th class="col-xs-2">タイトル</th>
+              <th class="col-xs-2">内容</th>
+              <!-- <th "col-xs-2">添付</th> -->
+              <th class="col-xs-2">日付</th>
+              <th class="col-xs-2">作成者</th>
+              <th class="col-xs-2"></th>
             </tr>
           </thead>
           <tbody>
             @foreach($articles as $article)
-              <tr>
-                <td><div class="max_30px">{{ $article -> id }}</td>
-                <td><div class="max_300px">{{ $article -> title }}</td></div>
-                <td><div class="max_300px">{{ $article -> contents }}</td></div>
-                <td><div class="max_200px">{{ $article -> image_path }} </td></div>
-                <td><div class="max_200px">{{ $article -> updated_at }}</td></div>
-                <td><div class="max_200px">{{ $article -> name }}</td></div>
+           <tr>
+                <td>{{ $article -> id }}</td>
+                <td>{{ $article -> title }}</td>
+                <td>{{ $article -> contents }}</td>
+                <!-- <td><div class="max_200px">{{ $article -> image_path }} </td></div> -->
+                <td>{{ $article -> updated_at }}</td>
+                <td>{{ $article -> name }}</td>
                 <td>
-                <div class="max_150px">
                   <div class="btn-group" role="group">
                     <button type="button" class="btn btn-primary btn-sm" onclick="location.href='/groupware/public/member/article/content/{{ $article -> id }}'">確認</button>
                     <button type="button" class="btn btn-success btn-sm" onclick="location.href='/groupware/public/member/article/edit/{{ $article -> id }}'">編集</button>
@@ -61,7 +58,6 @@
                     @csrf
                     <button type="submit" class="btn btn-danger btn-sm" onclick=>削除</button>
                   </div>
-                </div>
                 </td>
               </tr>
             @endforeach
