@@ -11,8 +11,7 @@
 |
 */
 
-Route::group(['prefix' => 'member','middleware' => 'auth'], function() {
-
+    Route::group(['prefix' => 'member','middleware' => 'auth'], function() {
     /*メイン*/
     //ホーム画面を表示
     Route::get('home/main', 'Member\HomeController@add');
