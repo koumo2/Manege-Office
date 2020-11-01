@@ -11,9 +11,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         <style>
-        .max_30px{
+        .compression{
+            max-width: 200px;
             display: block;
-            width:30px;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -150,19 +150,22 @@
             bottom: -3px;
             width: 20%;
         }
-        main {
+        /* main {
             margin:0 auto;
-        }
+        } */
         </style>
     </head>
     <body>
+    <div class="container">
         <div class="cp_navi">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-12 mx-auto">
                     <nav class="navbar navbar-expand-md navbar-light bg-white">
                         <div class="container">
                             <ul class="navbar-nav mr-auto">
                                 <li><a class="navbar-brand" href = {{ action('Member\HomeController@add') }}>
                                         Groupware
+                                        <span class="caret">
+                                        </span>
                                     </a>
                                 </li>
                                 <li>

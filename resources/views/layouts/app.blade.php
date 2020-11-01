@@ -57,17 +57,22 @@
     .cp_navi > div > nav > div > li:hover > a {
         color: rgb( 255, 255, 255 );
     }
+    .cp_navi > div > nav > div > ul > li:hover > a > .caret {
+        border-top-color: rgb( 255, 255, 255 );
+    }
     </style>
 </head>
 <body>
     <!-- <div id="app"> -->
         <div class="cp_navi">
-            <div class="col-md-8 mx-auto">
+            <div class="col-md-6 mx-auto">
                 <nav class="navbar navbar-expand-md navbar-light bg-white">
                     <div class="container">
                         <ul class="navbar-nav mr-auto">
                             <li><a class="navbar-brand" href="http://localhost/groupware/public/login">
                                     Groupware
+                                    <span class="caret">
+                                    </span>
                                 </a>
                             </li>
                         </ul>
@@ -76,21 +81,26 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">
                                     ログイン
+                                    <span class="caret">
+                                    </span>
                                 </a>
                             </li>
                             @if (Route::has('register'))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">
                                     新規登録
+                                    <span class="caret">
+                                    </span>
                                 </a>
                             </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }}
+                                    <span class="caret">
+                                    </span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();

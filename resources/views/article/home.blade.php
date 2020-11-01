@@ -4,7 +4,7 @@
 @section('title', "回覧板")
 @section('content')
 
-<div class="col-lg-10 mx-auto">
+<div class="col-lg-12 mx-auto">
 <div class=home_main>
   
 @if (session('err_msg'))
@@ -44,12 +44,11 @@
           <tbody>
             @foreach($articles as $article)
            <tr>
-                <td>{{ $article -> id }}</td>
-                <td>{{ $article -> title }}</td>
-                <td>{{ $article -> contents }}</td>
-                <!-- <td><div class="max_200px">{{ $article -> image_path }} </td></div> -->
-                <td>{{ $article -> updated_at }}</td>
-                <td>{{ $article -> name }}</td>
+                <td><div class="compression">{{ $article -> id }}</td></div>
+                <td><div class="compression">{{ $article -> title }}</td></div>
+                <td><div class="compression">{{ $article -> contents }}</td></div>
+                <td><div class="compression">{{ $article -> updated_at }}</td></div>
+                <td><div class="compression">{{ $article -> name }}</td></div>
                 <td>
                   <div class="btn-group" role="group">
                     <button type="button" class="btn btn-primary btn-sm" onclick="location.href='/groupware/public/member/article/content/{{ $article -> id }}'">確認</button>
