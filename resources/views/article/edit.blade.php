@@ -26,9 +26,7 @@
               内容
             </label>
               <div class="col-md-12">
-                <textarea name="contents" class="form-control" rows="10" placeholder="内容" >
-                  {{ $article -> contents }}
-                </textarea>
+                <textarea name="contents" class="form-control" rows="10" placeholder="内容" >{{ $article -> contents }}</textarea>
                 @if ($errors->has('contents'))
                   <div class="text-danger">
                     {{ $errors->first('contents') }}

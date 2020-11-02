@@ -1,7 +1,7 @@
 <!-- メニューバーを継承-->
 @extends('layouts.menuber')
 
-@section('title', "回覧板")
+@section('title', "回覧板＿ホーム")
 @section('content')
 
 <div class="col-lg-12 mx-auto">

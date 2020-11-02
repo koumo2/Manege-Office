@@ -1,6 +1,6 @@
 @extends('layouts.menuber')
 
-@section('title', "ホーム画面")
+@section('title', "Manege Office")
 @section('content')
 <div class="col-md-12 mx-auto">
 <div class = home_main>
@@ -30,7 +30,7 @@
     </div>
   </div>
 
-    <!-- スケジュールのショートカット　始まり-->
+<!-- スケジュールのショートカット　始まり-->
 <div class="container-fluid">
    <div class="row">
     <div class="col-sm-7">
@@ -75,9 +75,9 @@
             </tbody>
           </table>
         </div>
-      <!-- スケジュールのショートカット　終わり-->
+<!-- スケジュールのショートカット　終わり-->
 
-      <!-- 書類申請のショートカット　始まり-->
+<!-- 書類申請のショートカット　始まり-->
       <h2>・書類申請状況</h2>
         <div class = "text-center">
           <table class="table table-bordered">
@@ -85,7 +85,7 @@
               <tr>
               <th>No</th>
               <th>タイトル</th>
-              <th>作成日</th>
+              <th>申請日</th>
               <th>作成者</th>
               <th>申請状況</th>
               </tr>
@@ -106,24 +106,14 @@
                 <td>{{ $data }}</td>
                 @endforeach
               </tr>
-              <tr>
-                @foreach ($request4 as $data)
-                <td>{{ $data }}</td>
-                @endforeach
-              </tr>
-              <tr>
-                @foreach ($request5 as $data)
-                <td>{{ $data }}</td>
-                @endforeach
-              </tr>
             </tbody>
           </table>
         </div>
         </div>
 <!-- 書類申請のショートカット　終わり-->
 
-     <div class="col-sm-5">
-     <h2>・残業時間推移</h2>
+  <div class="col-sm-5">
+    <h2>・残業時間推移</h2>
      <canvas id="myPieChart"></canvas>
       <script>
         var ctx = document.getElementById("myPieChart");
@@ -173,7 +163,7 @@
           </script>
       </div>
     </div>
-  </div>
-</div>
+  　</div>
+　</div>
 </div>
 @endsection

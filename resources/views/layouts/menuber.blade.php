@@ -18,41 +18,6 @@
             text-overflow: ellipsis;
             overflow: hidden;
         }
-        .max_100px{
-            display: block;
-            width:100px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-        .max_150px{
-            display: block;
-            width: 150px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-        .max_200px{
-            display: block;
-            width: 200px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-        .max_250px{
-            display: block;
-            width: 250px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-        .max_300px{
-            display: block;
-            width: 300px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
         .home_main{
             padding-top:20px;
         }
@@ -64,10 +29,19 @@
         .return {
             text-align: right;
         }
-        .form-horizontal {
-            border:solid;
-            border-color:#031de2;
+        h2 {
+            border-bottom: solid 3px #cce4ff;
+            position: relative;
         }
+        h2:after {
+            position: absolute;
+            content: " ";
+            display: block;
+            border-bottom: solid 3px #5472cd;
+            bottom: -3px;
+            width: 20%;
+        }
+        /* メニューバー */
         .cp_navi > div > nav > div {
             background-color: #ffffff;
             border: 1px solid #dedede;
@@ -137,22 +111,6 @@
         .cp_navi > div > nav > div > ul > li > div ul > li:hover > a {
             background-color: rgba( 255, 255, 255, 0.1);
         }
-        h2 {
-            border-bottom: solid 3px #cce4ff;
-            position: relative;
-        }
-
-        h2:after {
-            position: absolute;
-            content: " ";
-            display: block;
-            border-bottom: solid 3px #5472cd;
-            bottom: -3px;
-            width: 20%;
-        }
-        /* main {
-            margin:0 auto;
-        } */
         </style>
     </head>
     <body>
@@ -163,7 +121,7 @@
                         <div class="container">
                             <ul class="navbar-nav mr-auto">
                                 <li><a class="navbar-brand" href = {{ action('Member\HomeController@add') }}>
-                                        Groupware
+                                        Manege Office
                                         <span class="caret">
                                         </span>
                                     </a>
@@ -176,11 +134,11 @@
                                     </a>
                                     <div>
                                         <ul>
-                                            <li>
+                                            <!-- <li>
                                                 <a href = {{ action('Member\HomeController@article_home') }}>
                                                 ホーム
                                                 </a>
-                                            </li>
+                                            </li> -->
                                             <li>
                                                 <a href = {{ action('Member\HomeController@article_create') }} >
                                                 新規作成
@@ -190,18 +148,18 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href = {{ action('Member\HomeController@schedule_home') }} >
+                                    <a href =  >
                                         スケジュール
                                         <span class="caret">
                                         </span>
                                     </a>
                                     <div>
                                         <ul>
-                                            <li>
-                                                <a href = {{ action('Member\HomeController@schedule_home') }} >
+                                            <!-- <li>
+                                                <a href =  >
                                                 ホーム
                                                 </a>
-                                            </li>
+                                            </li> -->
                                             <li>
                                                 <a href = {{ action('Member\HomeController@schedule_create') }} >
                                                 新規作成
@@ -218,11 +176,11 @@
                                     </a>
                                     <div>
                                         <ul>
-                                            <li>
+                                            <!-- <li>
                                                 <a href = {{ action('Member\HomeController@request_home') }} >
                                                 ホーム
                                                 </a>
-                                            </li>
+                                            </li> -->
                                             <li>
                                                 <a href = {{ action('Member\HomeController@request_create') }} >
                                                     新規申請
@@ -242,7 +200,7 @@
                                     <div>
                                         <ul>
                                             <li>
-                                                <a href= "/groupware/public/member/home/logout" >
+                                                <a href= "/ManegeOffice/public/member/home/logout" >
                                                     ログアウト
                                                 </a>
                                             </li>

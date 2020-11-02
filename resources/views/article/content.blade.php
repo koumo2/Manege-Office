@@ -31,12 +31,10 @@
                 </div>
             </div>
                 <label class="col-md-6 control-label">
-                    内容
+                内容
                 </label>
             <div class="col-md-12">
-                <textarea name="contents" class="form-control" rows="10" readonly>
-                    {{ $article->contents }}
-                </textarea>
+                <textarea name="contents" class="form-control" rows="10" readonly>{{ $article->contents }}</textarea>
             </div>
             <div class="image">
                 @if ($article->image_path)

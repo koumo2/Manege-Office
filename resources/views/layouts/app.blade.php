@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Groupware</title>
+    <title>Manege Office</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -70,7 +70,7 @@
                     <div class="container">
                         <ul class="navbar-nav mr-auto">
                             <li><a class="navbar-brand" href="http://localhost/groupware/public/login">
-                                    Groupware
+                                    Manege Office
                                     <span class="caret">
                                     </span>
                                 </a>
