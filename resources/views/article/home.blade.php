@@ -59,10 +59,10 @@
                 <td><div class="compression">{{ $article -> name }}</td></div>
                 <td>
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-primary btn-sm" onclick="location.href='/groupware/public/member/article/content/{{ $article -> id }}'">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="location.href='/ManegeOffice/public/member/article/content/{{ $article -> id }}'">
                       確認
                     </button>
-                    <button type="button" class="btn btn-success btn-sm" onclick="location.href='/groupware/public/member/article/edit/{{ $article -> id }}'">
+                    <button type="button" class="btn btn-success btn-sm" onclick="location.href='/ManegeOffice/public/member/article/edit/{{ $article -> id }}'">
                       編集
                     </button>
                     <form method="POST" action="{{ route('article_delete',$article->id) }}" onSubmit="return checkDelete()">

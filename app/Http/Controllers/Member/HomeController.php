@@ -39,7 +39,7 @@ class HomeController extends Controller
       'content6' => '会議',
       'content7' => '休み'
     ];
-    $articles = Article::paginate(3);
+    $articles = Article::orderBy('updated_at','desc')->paginate(3);
     $request1 = [
       'data1' => '1',
       'data2' => '新規製品の仕様書について',
@@ -74,7 +74,7 @@ class HomeController extends Controller
   */
   public function article_home()
   {
-    $articles = Article::paginate(10);
+    $articles = Article::orderBy('updated_at','desc')->paginate(10);
     return view('article.home',['articles' => $articles]);
   }
 
