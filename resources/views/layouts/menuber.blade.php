@@ -41,6 +41,9 @@
             bottom: -3px;
             width: 20%;
         }
+        h3{
+            padding-top:15px;
+        }
         /* メニューバー */
         .cp_navi > div > nav > div {
             background-color: #ffffff;

@@ -39,7 +39,7 @@ class HomeController extends Controller
       'content6' => '会議',
       'content7' => '休み'
     ];
-    $articles = Article::orderBy('updated_at','desc')->paginate(3);
+    $articles = Article::orderBy('updated_at','desc')->paginate(4);
     $request1 = [
       'data1' => '2020-10-17',
       'data2' => '甲元　和馬',
@@ -58,10 +58,26 @@ class HomeController extends Controller
       'data3' => '有給休暇の申請をします。',
       'data4' => '×',
     ];
-    $time = rand(0,45);
-    $total_time = [35,10,40,10,30,50,25,20,45,20];
 
-    return view('home.main',['articles' => $articles],compact('dates','contents','$articles','request1','request2','request3','time','total_time'));
+    $today = date("d");
+    if($today >= 28){
+      $today -= 8;
+    }elseif($today >= 21){
+      $today -= 6;
+    }elseif($today >= 14){
+      $today -= 4;
+    }elseif($today >= 7){
+      $today -= 2;
+    }
+    $Overtime = ($today * 2);
+
+    $Progress_day = 31 - date("d");
+    $Progress_time = 30 - $Overtime;
+    $Progress_rate = intval(($Progress_day / $Progress_time) *100);
+
+    $total_time = [35,10,40,10,30,50,25,20,45,20,$Overtime];
+
+    return view('home.main',['articles' => $articles],compact('dates','contents','$articles','request1','request2','request3','Overtime','total_time','Progress_rate'));
   }
 
   /**

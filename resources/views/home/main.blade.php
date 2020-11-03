@@ -86,17 +86,16 @@
             <tbody>
               <tr>
                 @foreach ($request1 as $data)
-                <td>{{ $data }}</td>
+                <td><div class="compression">{{ $data }}</td></div>
                 @endforeach
               </tr>
               <tr>
                 @foreach ($request2 as $data)
-                <td>{{ $data }}</td>
-                @endforeach
+                <td><div class="compression">{{ $data }}</td></div>                @endforeach
               </tr>
               <tr>
                 @foreach ($request3 as $data)
-                <td>{{ $data }}</td>
+                <td><div class="compression">{{ $data }}</td></div>
                 @endforeach
               </tr>
             </tbody>
@@ -106,18 +105,20 @@
 <!-- 書類申請のショートカット　終わり-->
 
   <div class="col-sm-5">
-    <h2>・残業時間推移</h2>
+    <h2>残業時間<?php $day = date("『m月d日』");echo $day;?>時点</h2>
+
+    <h3>進捗率[<?php echo $Progress_rate;?>%]</h3>
      <canvas id="myPieChart"></canvas>
       <script>
         var ctx = document.getElementById("myPieChart");
         var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ["残業時間", ""],
+            labels: ["残業時間"],
             datasets: [{
                 label: '# of Votes',
                 // data: [12, 33],
-                data : [@json($time),45- @json($time)],
+                data : [@json($Overtime),45- @json($Overtime)],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(238,238,238,1)',
@@ -135,7 +136,7 @@
     }
   });
         </script>
-        <h2>・残業時間推移</h2>
+        <h3><?php $day = date("Y年");echo $day;?>実績推移</h3>
         <canvas id="myChart"></canvas>
           <script>
             var ctx = document.getElementById('myChart').getContext('2d');
