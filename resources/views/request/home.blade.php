@@ -38,13 +38,12 @@
         <table class="table table-bordered">
           <thead class="thead-light">
             <tr>
-              <th class="col-xs-2">No</th>
+              <th class="col-xs-2">申請日</th>
+              <th class="col-xs-2">作成者</th>
               <th class="col-xs-2">分類</th>
               <th class="col-xs-2">タイトル</th>
-              <th class="col-xs-2">申請日</th>
               <!-- <th "col-xs-2">添付</th> -->
               <th class="col-xs-2">内容</th>
-              <th class="col-xs-2">作成者</th>
               <th class="col-xs-2">申請状況</th>
             </tr>
           </thead>

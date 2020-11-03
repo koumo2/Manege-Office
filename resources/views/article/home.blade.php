@@ -39,24 +39,21 @@
         <table class="table table-bordered">
           <thead class="thead-light">
             <tr>
-              <th class="col-xs-2">No</th>
+              <th class="col-xs-2">更新日</th>
+              <th class="col-xs-2">作成者</th>
               <th class="col-xs-2">タイトル</th>
               <th class="col-xs-2">内容</th>
               <!-- <th "col-xs-2">添付</th> -->
-              <th class="col-xs-2">日付</th>
-              <th class="col-xs-2">作成者</th>
               <th class="col-xs-2"></th>
             </tr>
           </thead>
           <tbody>
             @foreach($articles as $article)
             <tr>
-                <td>
-                  <div class="compression">{{ $article -> id }}</td></div>
-                <td><div class="compression">{{ $article -> title }}</td></div>
-                <td><div class="compression">{{ $article -> contents }}</td></div>
                 <td><div class="compression">{{ $article -> updated_at }}</td></div>
                 <td><div class="compression">{{ $article -> name }}</td></div>
+                <td><div class="compression">{{ $article -> title }}</td></div>
+                <td><div class="compression">{{ $article -> contents }}</td></div>
                 <td>
                   <div class="btn-group" role="group">
                     <button type="button" class="btn btn-primary btn-sm" onclick="location.href='/ManegeOffice/public/member/article/content/{{ $article -> id }}'">

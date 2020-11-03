@@ -39,27 +39,14 @@
           <table class="table table-bordered">
             <thead class="thead-light">
               <tr>
-                <th width="20px">No</th>
-                <th width="150px">タイトル</th>
-                <th width="100px">作成日</th>
+                <th width="100px">更新日</th>
                 <th width="100px">作成者</th>
+                <th width="150px">タイトル</th>
               </tr>
             </thead>
             <tbody>
               @foreach ($articles as $article)
               <tr>
-                <td>
-                  <div class="compression">
-                    {{ $article -> id }}
-                  </div>
-                </td>
-                <td>
-                  <div class="compression">
-                    <a href="/groupware/public/member/article/content/{{ $article -> id }}">
-                      {{ $article -> title }}
-                    </a>
-                  </div>
-                </td>
                 <td>
                   <div class="compression">
                     {{ $article -> updated_at }}
@@ -68,6 +55,13 @@
                 <td>
                   <div class="compression">
                     {{ $article -> name }}
+                  </div>
+                </td>
+                <td>
+                  <div class="compression">
+                    <a href="/ManegeOffice/public/member/article/content/{{ $article -> id }}">
+                      {{ $article -> title }}
+                    </a>
                   </div>
                 </td>
               </tr>
@@ -83,10 +77,9 @@
           <table class="table table-bordered">
             <thead class="thead-light">
               <tr>
-              <th>No</th>
-              <th>タイトル</th>
               <th>申請日</th>
-              <th>作成者</th>
+              <th>申請者</th>
+              <th>タイトル</th>
               <th>申請状況</th>
               </tr>
             </thead>
