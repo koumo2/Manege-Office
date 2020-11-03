@@ -105,10 +105,14 @@
 <!-- 書類申請のショートカット　終わり-->
 
   <div class="col-sm-5">
-    <h2>残業時間<?php $day = date("『m月d日』");echo $day;?>時点</h2>
-
-    <h3>進捗率[<?php echo $Progress_rate;?>%]</h3>
-     <canvas id="myPieChart"></canvas>
+    <h2>・残業時間実績推移</h2>
+    <h3>
+      <?php $day = date("m月d日");echo $day;?>時点 
+      <font size="4">
+        進捗率：<?php echo $Progress_rate;?>%
+      </font>
+    </h3>
+    <canvas id="myPieChart"></canvas>
       <script>
         var ctx = document.getElementById("myPieChart");
         var myChart = new Chart(ctx, {
@@ -136,7 +140,7 @@
     }
   });
         </script>
-        <h3><?php $day = date("Y年");echo $day;?>実績推移</h3>
+        <h3><?php $day = date("Y年");echo $day;?>月別実績</h3>
         <canvas id="myChart"></canvas>
           <script>
             var ctx = document.getElementById('myChart').getContext('2d');
@@ -146,7 +150,6 @@
             labels: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
             datasets: [{
             label: '残業時間',
-            // data: [25,10,5,2,20,30,45,50,25,25],
             data : @json($total_time),
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)'

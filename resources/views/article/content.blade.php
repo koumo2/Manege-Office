@@ -15,7 +15,7 @@
             <div class="form-row">
                 <div class="form-group col-6">
                     <label class="col-sm-8 control-label">
-                        作成日
+                        更新日
                     </label>
                     <div class="col-sm-11">
                         <input type="text" name="date" class="form-control" value="{{ $article->date }}" readonly/>

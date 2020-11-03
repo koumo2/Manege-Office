@@ -30,16 +30,16 @@
             text-align: right;
         }
         h2 {
-            border-bottom: solid 3px #cce4ff;
+            border-bottom: solid 3px skyblue;
             position: relative;
         }
         h2:after {
             position: absolute;
             content: " ";
             display: block;
-            border-bottom: solid 3px #5472cd;
+            border-bottom: solid 3px #ffc778;
             bottom: -3px;
-            width: 20%;
+            width: 30%;
         }
         h3{
             padding-top:15px;
