@@ -1,7 +1,8 @@
 # Manege Office
+ 本アプリケーションは、業務効率化UPを目的としたグループウェアです。  
  
 # URL
-<http://localhost/ManegeOffice/public/member/home/main>
+<http://localhost/ManegeOffice/public/login>
 
 # 使用技術
 * PHP 7.3.11
