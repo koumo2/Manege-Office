@@ -69,7 +69,7 @@
                 <nav class="navbar navbar-expand-md navbar-light bg-white">
                     <div class="container">
                         <ul class="navbar-nav mr-auto">
-                            <li><a class="navbar-brand" href="http://localhost/groupware/public/login">
+                            <li><a class="navbar-brand" href="http://localhost/ManegeOffice/public/login">
                                     Manege Office
                                     <span class="caret">
                                     </span>

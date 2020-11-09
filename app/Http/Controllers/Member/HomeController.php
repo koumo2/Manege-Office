@@ -316,6 +316,5 @@ class HomeController extends Controller
   {
   return view('request.content');
   }
-
 }
 ?>
