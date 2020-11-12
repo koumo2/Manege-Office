@@ -34,6 +34,7 @@
         </form>
       </div>
   </div>
+  <!-- 回覧板一覧表示-->
     <div class="text-center">
       <div class="container-fluid">
         <table class="table table-bordered">
@@ -75,6 +76,7 @@
         </table>
       </div>
     </div>
+  <!-- 回覧板一覧表示　終わり-->
   </div>
 </div>
 <script>

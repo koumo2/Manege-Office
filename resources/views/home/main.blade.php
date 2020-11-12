@@ -4,7 +4,7 @@
 @section('content')
 <div class="col-md-12 mx-auto">
 <div class = home_main>
-
+<!-- スケジュールのショートカット　始まり-->
   <h2>・スケジュール</h2>
   <div class = "text-center">
     <div class="container-fluid">
@@ -29,10 +29,11 @@
     </table>
     </div>
   </div>
+<!-- スケジュールのショートカット　終わり-->
 
-<!-- スケジュールのショートカット　始まり-->
+<!-- 回覧板のショートカット　始まり-->
 <div class="container-fluid">
-   <div class="row">
+  <div class="row">
     <div class="col-sm-7">
       <h2>・回覧板</h2>
         <div class = "text-center">
@@ -69,7 +70,7 @@
             </tbody>
           </table>
         </div>
-<!-- スケジュールのショートカット　終わり-->
+<!-- 回覧板のショートカット　終わり-->
 
 <!-- 書類申請のショートカット　始まり-->
       <h2>・書類申請状況</h2>
@@ -91,7 +92,8 @@
               </tr>
               <tr>
                 @foreach ($request2 as $data)
-                <td><div class="compression">{{ $data }}</td></div>                @endforeach
+                <td><div class="compression">{{ $data }}</td></div> 
+              　@endforeach
               </tr>
               <tr>
                 @foreach ($request3 as $data)
@@ -108,7 +110,7 @@
   <div class="col-sm-5">
     <h2>・残業時間実績推移</h2>
     <h3>
-      <?php $day = date("m月d日");echo $day;?>時点 
+      <?php $day = date("m月d日");echo $day;?>時点
       <font size="4">
         進捗率：<?php echo $Progress_rate;?>%
       </font>

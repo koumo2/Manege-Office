@@ -21,6 +21,7 @@ class HomeController extends Controller
   */
   public function add()
   {
+//スケジュールショートカットの仮実装
     $dates = [
       'date1' => '11月1日(日)',
       'date2' => '11月2日(月)',
@@ -39,7 +40,9 @@ class HomeController extends Controller
       'content6' => '会議',
       'content7' => '休み'
     ];
+//回覧板を更新日順に表示（４件まで）
     $articles = Article::orderBy('updated_at','desc')->paginate(4);
+//書類申請ショートカットの仮実装
     $request1 = [
       'data1' => '2020-10-17',
       'data2' => '甲元　和馬',
@@ -58,7 +61,7 @@ class HomeController extends Controller
       'data3' => '有給休暇の申請をします。',
       'data4' => '×',
     ];
-
+//残業時間進捗　仮実装
     $today = date("d");
     if($today >= 28){
       $today -= 8;
@@ -69,7 +72,7 @@ class HomeController extends Controller
     }elseif($today >= 7){
       $today -= 2;
     }
-    $Overtime = ($today * 2);
+    $Overtime = ($today * 1.5);
 
     $Progress_day = 31 - date("d");
     $Progress_time = 30 - $Overtime;
@@ -167,7 +170,6 @@ class HomeController extends Controller
   {
       $inputs = $request->all();
       $inputs['image_path']="aaa";
-      // $inputs['date']="2014-08-06 21:15:49";
 
       DB::beginTransaction();
           try {
@@ -204,6 +206,7 @@ class HomeController extends Controller
       Session::flash('err_msg', '回覧板を削除しました');
       return redirect(route('article_home'));
   }
+
 // ログアウトしログイン画面へ移動
   public function logout()
   {

@@ -30,6 +30,7 @@
             overflow: hidden;
             width: 100%;
             margin: 30px 0px 55px 0px;
+
     }
     .cp_navi > div > nav > div > ul {
         margin: 0;
@@ -65,7 +66,7 @@
 <body>
     <!-- <div id="app"> -->
         <div class="cp_navi">
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-7 mx-auto">
                 <nav class="navbar navbar-expand-md navbar-light bg-white">
                     <div class="container">
                         <ul class="navbar-nav mr-auto">

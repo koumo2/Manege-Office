@@ -5,6 +5,7 @@
 <div class="col-md-8 mx-auto">
   <h2>回覧板新規作成</h2>
     <div class= create_main >
+    <!-- 回覧板入力フォーム -->
       <form method="POST" action="{{ route('article_store') }}" onSubmit="return checkSubmit()">
         @csrf
         <!-- タイトルの入力 -->
@@ -65,12 +66,15 @@
           </div>
           {{ csrf_field() }}
     </form>
+    <!-- 回覧板入力フォーム -->
+
     <div class=return>
       <a href = home><input type="submit" value="戻る">
       </a>
     </div>
   </div>
 </div>
+
 <script>
   function checkSubmit(){
   if(window.confirm('送信してよろしいですか？')){
