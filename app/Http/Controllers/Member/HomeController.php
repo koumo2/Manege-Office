@@ -45,19 +45,19 @@ class HomeController extends Controller
 //書類申請ショートカットの仮実装
     $request1 = [
       'data1' => '2020-10-17',
-      'data2' => '甲元　和馬',
+      'data2' => 'テスト',
       'data3' => '新規製品の仕様書について',
       'data4' => '○',
     ];
     $request2 = [
       'data1' => '2020-10-20',
-      'data2' => '甲元　和馬',
+      'data2' => 'テスト',
       'data3' => '11月13日の大阪出張の件',
       'data4' => '×',
     ];
     $request3 = [
       'data1' => '2020-10-24',
-      'data2' => '甲元　和馬',
+      'data2' => 'テスト',
       'data3' => '有給休暇の申請をします。',
       'data4' => '×',
     ];
