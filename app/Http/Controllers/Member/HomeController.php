@@ -17,7 +17,7 @@ class HomeController extends Controller
   /**
    *メインホーム画面を表示
    *
-   *
+   * @return view
   */
   public function add()
   {
@@ -84,9 +84,9 @@ class HomeController extends Controller
   }
 
   /**
-   *回覧板ホーム画面を表示
+   * 回覧板ホーム画面を表示
    *
-   *
+   * @return view
   */
   public function article_home()
   {
@@ -95,18 +95,18 @@ class HomeController extends Controller
   }
 
   /**
-   *回覧板作成画面を表示
+   * 回覧板作成画面を表示
    *
-   *
+   * @return view
   */
   public function article_create()
   {
     return view('article.create');
   }
   /**
-   *回覧板登録
+   * 回覧板登録
    *
-   *
+   * @return view
   */
   public function article_store(ArticleRequest $request)
   {
@@ -133,9 +133,9 @@ class HomeController extends Controller
   }
 
   /**
-   *回覧板内容確認
-   *
-   *
+   * 回覧板詳細画面を表示
+   * @param int $id
+   * @return view
   */
   public function article_content($id)
   {
@@ -148,9 +148,9 @@ class HomeController extends Controller
   }
 
 /**
-   *回覧板編集画面を表示
-   *
-   *
+   * 回覧板編集画面を表示
+   * @param int $id
+   * @return view
   */
   public function article_edit($id)
   {
@@ -162,9 +162,9 @@ class HomeController extends Controller
     return view('article.edit',['article' => $article]);
   }
 /**
-  *回覧板更新
+  * 回覧板を更新
   *
-  *
+  * @return view
  */
   public function article_update(ArticleRequest $request)
   {
@@ -188,9 +188,9 @@ class HomeController extends Controller
     return redirect(route('article_home'));
   }
   /**
-  *回覧板削除
-  *
-  *
+  * 回覧板削除
+  * @param int $id
+  * @return view
  */
   public function article_delete($id)
   {
