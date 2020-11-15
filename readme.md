@@ -1,6 +1,7 @@
 # Manege Office
- 本アプリケーションは、業務効率化UPを目的としたグループウェアです。  
- 
+ 本アプリケーションは、業務効率化UPを目的としたグループウェアです。
+ ![スクリーンショット 2020-11-14 10 13 13](https://user-images.githubusercontent.com/65598560/99162889-51e3a700-2746-11eb-8ea5-c0f925125af1.png)
+
 # URL
 <http://localhost/ManegeOffice/public/login>
 

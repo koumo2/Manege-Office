@@ -23,13 +23,13 @@ class HomeController extends Controller
   {
 //スケジュールショートカットの仮実装
     $dates = [
-      'date1' => '11月1日(日)',
-      'date2' => '11月2日(月)',
-      'date3' => '11月3日(火)',
-      'date4' => '11月4日(水)',
-      'date5' => '11月5日(木)',
-      'date6' => '11月6日(金)',
-      'date7' => '11月7日(土)'
+      'date1' => '11月15日(日)',
+      'date2' => '11月16日(月)',
+      'date3' => '11月17日(火)',
+      'date4' => '11月18日(水)',
+      'date5' => '11月19日(木)',
+      'date6' => '11月20日(金)',
+      'date7' => '11月21日(土)'
     ];
     $contents = [
       'content1' => '休み',
@@ -141,7 +141,7 @@ class HomeController extends Controller
   {
     $article = Article::find($id);
     if(is_null($article)){
-      Session::flash('err_msg', 'データがありません。');
+      // Session::flash('err_msg', 'データがありません。');
       return redirect(route('article_home'));
     }
     return view('article.content',['article' => $article]);
@@ -156,7 +156,7 @@ class HomeController extends Controller
   {
     $article = Article::find($id);
     if(is_null($article)){
-      Session::flash('err_msg', 'データがありません。');
+      // Session::flash('err_msg', 'データがありません。');
       return redirect(route('article_home'));
     }
     return view('article.edit',['article' => $article]);
