@@ -3,8 +3,8 @@
  ![スクリーンショット 2020-11-14 10 13 13](https://user-images.githubusercontent.com/65598560/99162889-51e3a700-2746-11eb-8ea5-c0f925125af1.png)
 
 # アプリケーションについて
-　アプリケーションの説明については、youtubeに動画アップロードしました。　
-　こちらが、URLとなります。
+　アプリケーションの説明については、youtubeに動画アップロードしました。  
+　こちらが、URLとなります。  
 <https://www.youtube.com/watch?v=nRBa1Iwv3Pg>
 
 # 使用技術
