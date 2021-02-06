@@ -72,7 +72,7 @@ class HomeController extends Controller
     }elseif($today >= 7){
       $today -= 2;
     }
-    $Overtime = ($today * 1.5);
+    $Overtime = ($today * 1.4);
 
     $Progress_day = 31 - date("d");
     $Progress_time = 30 - $Overtime;

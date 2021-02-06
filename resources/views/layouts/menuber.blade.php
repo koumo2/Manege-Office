@@ -156,7 +156,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href =  >
+                                    <a href = {{ action('Member\HomeController@schedule_home') }} >
                                         スケジュール
                                         <span class="caret">
                                         </span>
@@ -184,11 +184,11 @@
                                     </a>
                                     <div>
                                         <ul>
-                                            <!-- <li>
+                                            <li>
                                                 <a href = {{ action('Member\HomeController@request_home') }} >
                                                 ホーム
                                                 </a>
-                                            </li> -->
+                                            </li>
                                             <li>
                                                 <a href = {{ action('Member\HomeController@request_create') }} >
                                                     新規申請
